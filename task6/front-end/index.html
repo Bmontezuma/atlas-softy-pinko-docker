@@ -27,11 +27,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Custom JavaScript -->
     <script>
-        // Load dynamic data from the back-end through the proxy server
+        // Load dynamic data from the back-end on port 5252
         $(function() {
             $.ajax({
                 type: "GET",
-                url: "/api/hello", // Access the API through the proxy server
+                url: "/api/hello", // This will be routed through the proxy server
                 success: function(data) {
                     console.log(data);
                     $('#dynamic-content').text(data);
