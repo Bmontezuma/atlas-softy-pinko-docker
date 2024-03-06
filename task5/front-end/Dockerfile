@@ -1,8 +1,8 @@
-# Use the official Nginx base image
+# Base image
 FROM nginx:latest
 
-# Copy the static content for the front-end into the container
-COPY . /var/www/html/softy-pinko-front-end
+# Copy the front-end files to the Nginx document root
+COPY softy-pinko-front-end /var/www/html/softy-pinko-front-end
 
-# Copy the Nginx configuration file
+# Copy Nginx configuration file
 COPY softy-pinko-front-end.conf /etc/nginx/conf.d/default.conf

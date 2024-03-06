@@ -1,25 +1,16 @@
-version: '3'
+version: '3.8'
 
 services:
   front-end:
     build:
-      context: ./front-end
-      dockerfile: Dockerfile
-    # Remove the port mapping for the front-end service
-    # ports:
-    #   - "9000:9000"
+      context: .
+      dockerfile: Dockerfile-front-end
+    ports:
+      - "9000:80"
 
   back-end:
     build:
-      context: ./back-end
-      dockerfile: Dockerfile
-    # Remove the port mapping for the back-end service
-    # ports:
-    #   - "5252:5252"
-
-  proxy:
-    build:
-      context: ./proxy
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile-back-end
     ports:
-      - "80:80"  # Map the proxy server's port 80 to the host machine's port 80
+      - "5252:5252"
